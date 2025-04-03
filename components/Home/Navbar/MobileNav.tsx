@@ -2,6 +2,7 @@ import { navLinks } from '@/constants/constant';
 import Link from 'next/link';
 import React from 'react';
 import { CgClose } from 'react-icons/cg';
+import { SocialLoginButton } from './SocialLoginButton';
 
 type Props = {
     showNav: boolean;
@@ -25,7 +26,9 @@ const MobileNav = ({showNav, closeNav}:Props) => {
             </p>
           </Link>
         ))}
-      {/* closeButton */}
+    {/* Login Button */}
+    <SocialLoginButton className='text-white '/>
+    {/* closeButton */}
       <CgClose onClick={closeNav} className='absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6'/>
       </div>
     </div>

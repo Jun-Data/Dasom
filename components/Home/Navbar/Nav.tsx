@@ -4,13 +4,16 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { HiBars3BottomRight } from 'react-icons/hi2'
 import Image from 'next/image';
+import { useSession, signOut } from 'next-auth/react';
+import { SocialLoginButton } from './SocialLoginButton';
 
 type Props = {
     openNav: ()=>void
 }
 
 const Nav = ({openNav}:Props) => {
-    const user = false;
+    const { data: session } = useSession();
+    const isLoggedIn = !!session;
     const [navBg, setNavBg] = useState(false);
     useEffect(()=>{
         const handler = () => {
@@ -38,16 +41,16 @@ const Nav = ({openNav}:Props) => {
                 })}
             </div>
 
-            {/* User Profile */}
-            {user ? <div className='flex space-x-4'>
+            {/* Login */}
+            {isLoggedIn ? ( <div className='flex space-x-4'>
                 <Link href="/profile">
                 <Image src="/images/avatar.png" alt='profile'width={38} height={38}/>
                 </Link>
-                <button>Logout</button>
-                </div> : 
-                <div className='flex items-center space-x-4'>
-                    <button className='md:px-12 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-blue-100 cursor-pointer transition-all duration-200 rounded-lg'>Login</button>
-                </div>}
+                <button onClick={()=>signOut()} className='text-sm hover:text-purple-300'>로그아웃</button>
+                </div> ) : (
+                    <SocialLoginButton className='md:px-10 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-100 cursor-pointer transition-all duration-200 rounded-lg'/>
+                )
+            }
             {/* Burger Menu */}
             <HiBars3BottomRight onClick={openNav} className='w-8 h-8 cursor-pointer text-black lg:hidden'/>
         </div>
