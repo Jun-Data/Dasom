@@ -26,9 +26,7 @@ export default function RootLayout({
         className={`${font.className} antialiased`}>
         <SessionProvider>
         <ResponsiveNav/>
-        <main className="pt-[12vh]">
         {children}
-        </main>
         <Footer/>
         </SessionProvider>
       </body>
