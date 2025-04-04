@@ -108,7 +108,7 @@ export default function ChatIntro() {
       {/* 캐릭터 */}
       <div className="flex flex-col items-center">
         <Image
-          src={isSpeaking ? "/images/chatrobot_speaking.gif" : "/images/chatbot.png"}
+          src={isSpeaking ? "/images/textbot.png" : "/images/chatbot.png"}
           alt="Dasom bot"
           width={200}
           height={200}
