@@ -77,10 +77,10 @@ export default function ChatIntro() {
   const fetchBotReply = async (text: string) => {
     // const userDeviceId = localStorage.getItem("userDeviceId");
     try {
-      const response = await fetch(`http://j12a704.p.ssafy.io:8080/api/chat/1`, {
+      const response = await fetch("api/chat-proxy", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type" : "application/json",
         },
         body: JSON.stringify({ message: text }),
       });
