@@ -11,8 +11,13 @@ declare global {
     }
 }
 
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+}
+
+
 export default function ChatIntro() {
-  const router = useRouter();
+  // const router = useRouter();
   const [inputMode, setInputMode] = useState<"voice" | "text">("voice");
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
@@ -47,7 +52,7 @@ export default function ChatIntro() {
 
     setIsListening(true); // 모달 띄우기
 
-    recognition.onresult = async (event: any) => {
+    recognition.onresult = async (event: SpeechRecognitionEvent) => {
       const text = event.results[0][0].transcript;
       setMessages((prev) => [...prev, { sender: "user", text }]);
       setIsSpeaking(true);
