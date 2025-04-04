@@ -77,7 +77,7 @@ export default function ChatIntro() {
   const fetchBotReply = async (text: string) => {
     // const userDeviceId = localStorage.getItem("userDeviceId");
     try {
-      const response = await fetch("api/chat-proxy", {
+      const response = await fetch("/api/chat-proxy", {
         method: "POST",
         headers: {
           "Content-Type" : "application/json",
