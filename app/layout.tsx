@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Poppins} from 'next/font/google'
+import {Poppins, Noto_Sans_KR} from 'next/font/google'
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import Footer from "@/components/Home/Footer/Footer";
 import { SessionProvider } from "next-auth/react";
 
-const font = Poppins({
+const poppins = Poppins({
+  weight:['100','200','300','400','500','600','700','800','900'],
+  subsets:['latin']
+})
+const notoSans = Noto_Sans_KR({
   weight:['100','200','300','400','500','600','700','800','900'],
   subsets:['latin']
 })
@@ -23,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} antialiased`}>
+        className={`${poppins.className} ${notoSans.className} font-sans antialiased`}>
         <SessionProvider>
         <ResponsiveNav/>
         {children}

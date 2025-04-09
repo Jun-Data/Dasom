@@ -15,9 +15,4 @@ export const navLinks = [
         url:'/chat',
         label: 'Chat'
     },
-    {
-        id:4,
-        url:'/dashboard',
-        label: 'Dashboard'
-    },
 ]

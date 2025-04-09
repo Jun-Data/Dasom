@@ -28,10 +28,12 @@ const Nav = ({openNav}:Props) => {
     <div className= {`${navBg ? "bg-indigo-100 p-6 shadow-sm": "fixed"} transition-all duration-200 h-[12vh] z-[1000] fixed w-full`}>
         <div className='flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
             {/* Logo */}
+            <Link href="/">
             <div className='flex items-center space-x-1'>
                 <div className='w-12 h-12'><Image src="/images/test.png" width={48} height={48} alt="logo" /></div>
                 <h1 className='text-xl md:text-2xl text-black uppercase font-bold'>Dasom</h1>
             </div>
+            </Link>
             {/* NavLinks */}
             <div className='hidden lg:flex items-center space-x-10'>
                 {navLinks.map((link)=>{
