@@ -94,7 +94,7 @@ export default function ChatIntro() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b from-indigo-100 via-white to-white pt-[12vh] pb-16">
+    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b from-indigo-100 via-white to-white pt-[12vh] pb-20">
       {/* 녹음 중 입니다 */}
       {isListening && (
         <div className="fixed inset-0 bg-opacity-40 z-50 flex justify-center items-center">
@@ -110,8 +110,8 @@ export default function ChatIntro() {
         <Image
           src={isSpeaking ? "/images/listening.png" : "/images/chatbot.png"}
           alt="Dasom bot"
-          width={170}
-          height={170}
+          width={150}
+          height={150}
         />
         <p className="text-gray-500">환영합니다!</p>
         <h2 className="text-2xl font-bold">무엇을 도와드릴까요?</h2>
@@ -120,7 +120,7 @@ export default function ChatIntro() {
       {/* 채팅 영역 */}
       <div
         ref={chatRef}
-        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[15vh] sm:h-[20vh] md:h-[30vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-3"
+        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[30vh] sm:h-[20vh] md:h-[30vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-3"
       >
         {messages.map((msg, idx) => (
           <div
@@ -155,14 +155,14 @@ export default function ChatIntro() {
       )}
 
       {/* 입력 모드 버튼들 */}
-      <div className="mt-6 flex flex-col items-center gap-4">
+      <div className="mt-4 flex flex-col items-center gap-4">
         <div className="flex gap-4">
           <button
             onClick={() => {
               setInputMode("voice");
               handleVoiceInput();
             }}
-            className={`p-4 rounded-full text-xl transition-colors duration-200 ${
+            className={`p-4 rounded-full text-l transition-colors duration-200 ${
               inputMode === "voice"
                 ? "bg-violet-500 text-white hover:bg-violet-600"
                 : "bg-white text-black hover:bg-gray-100"
@@ -172,7 +172,7 @@ export default function ChatIntro() {
           </button>
           <button
             onClick={() => setInputMode("text")}
-            className={`p-4 rounded-full text-xl transition-colors duration-200 ${
+            className={`p-4 rounded-full text-l transition-colors duration-200 ${
               inputMode === "text"
                 ? "bg-violet-500 text-white hover:bg-violet-600"
                 : "bg-white text-black hover:bg-gray-100"
