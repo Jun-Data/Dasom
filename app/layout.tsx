@@ -3,6 +3,7 @@ import "./globals.css";
 import {Poppins, Noto_Sans_KR} from 'next/font/google'
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import { SessionProvider } from "next-auth/react";
+import ScrollTop from "@/components/Helper/ScrollTop";
 
 const poppins = Poppins({
   weight:['100','200','300','400','500','600','700','800','900'],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ResponsiveNav/>
         {children}
         </SessionProvider>
+        <ScrollTop />
       </body>
     </html>
   );
