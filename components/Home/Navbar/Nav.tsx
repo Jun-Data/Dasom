@@ -35,10 +35,10 @@ const Nav = ({openNav}:Props) => {
             </div>
             </Link>
             {/* NavLinks */}
-            <div className='hidden lg:flex items-center space-x-10'>
+            <div className='hidden lg:flex items-center space-x-20'>
                 {navLinks.map((link)=>{
                     return <Link href={link.url} key={link.id}>
-                        <p className='hover:text-purple-300 transition-colors duration-200'>{link.label}</p>
+                        <p className='font-semibold hover:text-purple-300 transition-colors duration-200'>{link.label}</p>
                     </Link>
                 })}
             </div>
@@ -50,7 +50,7 @@ const Nav = ({openNav}:Props) => {
                 </Link>
                 <button onClick={()=>signOut()} className='text-sm hover:text-purple-300'>로그아웃</button>
                 </div> ) : (
-                    <SocialLoginButton className='md:px-10 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-100 cursor-pointer transition-all duration-200 rounded-lg'/>
+                    <SocialLoginButton className='md:px-10 md:py-2.5 px-8 py-2 text-black text-base bg-white shadow-md hover:bg-violet-50 cursor-pointer transition-all duration-200 rounded-lg'/>
                 )
             }
             {/* Burger Menu */}

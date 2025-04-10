@@ -2,17 +2,17 @@ export const navLinks = [
     {
         id:1,
         url:'/',
-        label: 'Home'
+        label: '홈으로'
     },
     {
         id:2,
-        url:'#about',
-        label: 'About',
+        url:'/#about',
+        label: '서비스 소개',
         internal: true
     },
     {
         id:3,
         url:'/chat',
-        label: 'Chat'
+        label: '다솜이와 채팅'
     },
 ]

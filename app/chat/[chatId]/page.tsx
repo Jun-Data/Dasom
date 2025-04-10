@@ -95,7 +95,7 @@ export default function ChatIntro() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b from-indigo-100 via-white to-white pt-[12vh] pb-12">
-      {/* 모달 */}
+      {/* 녹음 중 입니다 */}
       {isListening && (
         <div className="fixed inset-0 bg-opacity-40 z-50 flex justify-center items-center">
           <div className="bg-white rounded-xl p-6 shadow-xl text-center max-w-sm w-full mx-4">
@@ -108,25 +108,25 @@ export default function ChatIntro() {
       {/* 캐릭터 */}
       <div className="flex flex-col items-center">
         <Image
-          src={isSpeaking ? "/images/textbot.png" : "/images/chatbot.png"}
+          src={isSpeaking ? "/images/listening.png" : "/images/chatbot.png"}
           alt="Dasom bot"
-          width={200}
-          height={200}
+          width={170}
+          height={170}
         />
-        <p className="text-gray-500 mt-6">환영합니다!</p>
-        <h2 className="text-2xl font-bold mt-2">무엇을 도와드릴까요?</h2>
+        <p className="text-gray-500">환영합니다!</p>
+        <h2 className="text-2xl font-bold">무엇을 도와드릴까요?</h2>
       </div>
 
       {/* 채팅 영역 */}
       <div
         ref={chatRef}
-        className="w-full max-w-lg sm:max-w-xl md:max-w-2xl h-[40vh] sm:h-[50vh] md:h-[60vh] overflow-y-auto bg-white rounded-xl shadow-inner p-4 mt-6 mb-7"
+        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[20vh] sm:h-[30vh] md:h-[40vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-4 mt-6 mb-7"
       >
         {messages.map((msg, idx) => (
           <div
             key={idx}
             className={`mb-2 px-4 py-2 rounded-full w-fit max-w-[80%] text-sm ${
-              msg.sender === "user" ? "ml-auto bg-purple-400 text-white" : "mr-auto bg-sky-200"
+              msg.sender === "user" ? "ml-auto bg-indigo-500 text-white" : "mr-auto bg-sky-200"
             }`}
           >
             {msg.text}
@@ -147,7 +147,7 @@ export default function ChatIntro() {
           />
           <button
             onClick={handleSend}
-            className="bg-indigo-500 text-white px-4 py-2 rounded-full hover:bg-indigo-600"
+            className="bg-violet-500 text-white px-6 py-2.5 rounded-full hover:bg-violet-600"
           >
             전송
           </button>
@@ -164,21 +164,21 @@ export default function ChatIntro() {
             }}
             className={`p-4 rounded-full text-xl transition-colors duration-200 ${
               inputMode === "voice"
-                ? "bg-indigo-500 text-white hover:bg-indigo-600"
+                ? "bg-violet-500 text-white hover:bg-violet-600"
                 : "bg-white text-black hover:bg-gray-100"
             }`}
           >
-            🎤
+            🎤 마이크
           </button>
           <button
             onClick={() => setInputMode("text")}
             className={`p-4 rounded-full text-xl transition-colors duration-200 ${
               inputMode === "text"
-                ? "bg-indigo-500 text-white hover:bg-indigo-600"
+                ? "bg-violet-500 text-white hover:bg-violet-600"
                 : "bg-white text-black hover:bg-gray-100"
             }`}
           >
-            ⌨️
+            ⌨️ 키보드
           </button>
         </div>
       </div>
