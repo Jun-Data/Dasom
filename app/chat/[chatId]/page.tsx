@@ -120,7 +120,7 @@ export default function ChatIntro() {
       {/* 채팅 영역 */}
       <div
         ref={chatRef}
-        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[20vh] sm:h-[30vh] md:h-[40vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-4 mt-6 mb-7"
+        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[20vh] sm:h-[30vh] md:h-[30vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-4 mt-6 mb-7"
       >
         {messages.map((msg, idx) => (
           <div
@@ -136,14 +136,14 @@ export default function ChatIntro() {
 
       {/* 입력창 (텍스트 모드일 때만) */}
       {inputMode === "text" && (
-        <div className="flex gap-2 items-center max-w-md w-full px-4">
+        <div className="flex gap-2 items-center w-[95%] sm:w-[80%] px-4">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="메시지를 입력하세요"
-            className="flex-1 border px-4 py-2 rounded-full text-black"
+            className="flex-1 min-w-0 border px-4 py-2 rounded-full text-black"
           />
           <button
             onClick={handleSend}

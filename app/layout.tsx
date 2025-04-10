@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import {Poppins, Noto_Sans_KR} from 'next/font/google'
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
-import Footer from "@/components/Home/Footer/Footer";
 import { SessionProvider } from "next-auth/react";
 
 const poppins = Poppins({
@@ -31,7 +30,6 @@ export default function RootLayout({
         <SessionProvider>
         <ResponsiveNav/>
         {children}
-        <Footer/>
         </SessionProvider>
       </body>
     </html>

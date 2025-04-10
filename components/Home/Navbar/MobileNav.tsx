@@ -2,7 +2,6 @@ import { navLinks } from '@/constants/constant';
 import Link from 'next/link';
 import React from 'react';
 import { CgClose } from 'react-icons/cg';
-import { SocialLoginButton } from './SocialLoginButton';
 
 type Props = {
     showNav: boolean;
@@ -21,7 +20,7 @@ const MobileNav = ({showNav, closeNav}:Props) => {
       <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-purple-900 space-y-6 z-[1050]`}>
         {navLinks.map((link) => (
           <Link key={link.id} href={link.url}>
-            <p className="text-white w-fit text-[20px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]">
+            <p className="text-white w-fit text-[20px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]" onClick={closeNav}>
               {link.label}
             </p>
           </Link>
