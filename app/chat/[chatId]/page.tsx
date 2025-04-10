@@ -94,7 +94,7 @@ export default function ChatIntro() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b from-indigo-100 via-white to-white pt-[12vh] pb-12">
+    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-b from-indigo-100 via-white to-white pt-[12vh] pb-16">
       {/* 녹음 중 입니다 */}
       {isListening && (
         <div className="fixed inset-0 bg-opacity-40 z-50 flex justify-center items-center">
@@ -120,7 +120,7 @@ export default function ChatIntro() {
       {/* 채팅 영역 */}
       <div
         ref={chatRef}
-        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[20vh] sm:h-[30vh] md:h-[30vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-4 mt-6 mb-7"
+        className=" w-[90%] sm:w-[90%] md:w-[85%] lg:w-[80%] h-[15vh] sm:h-[20vh] md:h-[30vh] overflow-y-auto bg-white border border-gray-300 rounded-xl shadow-inner p-3"
       >
         {messages.map((msg, idx) => (
           <div
